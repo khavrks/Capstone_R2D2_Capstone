@@ -9,10 +9,14 @@ Nisrag Shah
 Mayank Vashisht
 ## Documentation
 [Kanban Board](https://trello.com/invite/b/tKye6Y4b/937651087bfdb46f3234beac003e7a32/kanban-template)
+
 [Project Charter](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2's%20Project%20Charter.docx)
+
 [RACI Char](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2's%20RACI%20Chart%20(Updated).docx)
+
 [Stakeholder Ananlysis](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2's%20Stakeholder%20Analysis.docx)
-[Business Case]()
+
+[Business Case](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2s%20Reunited's%20Business%20Case.docx)
 ## Commits
 Nikita - Initial Commit - September 10, 2022
 
