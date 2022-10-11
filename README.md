@@ -12,7 +12,7 @@ Mayank Vashisht
 
 [Project Charter](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2's%20Project%20Charter.docx)
 
-[RACI Char](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2's%20RACI%20Chart%20(Updated).docx)
+[RACI Chart](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2's%20RACI%20Chart%20(Updated).docx)
 
 [Stakeholder Ananlysis](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2's%20Stakeholder%20Analysis.docx)
 
