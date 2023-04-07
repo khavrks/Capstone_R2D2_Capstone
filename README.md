@@ -17,12 +17,14 @@ Mayank Vashisht
 [Stakeholder Ananlysis](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2's%20Stakeholder%20Analysis.docx)
 
 [Business Case](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2s%20Reunited's%20Business%20Case.docx)
+
+[Project Experience Report](https://1drv.ms/w/s!AiMUF9w9zosAiJAL8iPFxeQaVDQNQQ?e=dn1UnG)
 ## Commits
 Nikita - Initial Commit - September 10, 2022
 
 Nikita - init - September 10, 2022
 
-Nikita - Updae README.md - September 10, 2022
+Nikita - Update README.md - September 10, 2022
 
 Nikita - second_init - September 10, 2022
 
