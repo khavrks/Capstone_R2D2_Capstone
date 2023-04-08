@@ -911,7 +911,8 @@ public class RTMPServer {
 }
 ```
 
-ai translation     
+AI Translation:
+This is a Python script that monitors a directory for newly created WAV files and transcribes them using the Google Cloud Speech-to-Text API. The transcription is done in a separate thread to avoid blocking the main thread. The language of the WAV file is determined based on the first two characters of the file name, and the transcription is done using the appropriate language model. The resulting transcription is saved as a WebVTT file in a specified directory.
 ```python
 import os
 from threading import Thread
