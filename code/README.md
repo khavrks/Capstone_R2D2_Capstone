@@ -10,11 +10,10 @@ Our project has 60000 lines of code and 5 different programs that were created d
 7. [Websockets connection](#websockets-connection)
 8. [Channel model](#channel-model)
 9. [Frontend login required example](#frontend-login-required-example)
-10.[WebPack Configuration](#webpack-configuration)
-11.[Main Page](#main-page)
-12.[RTMP handler](#rtmp-handler)
-13.[AI Translation](#ai-translation)
-
+10. [WebPack Configuration](#webpack-configuration)
+11. [Main Page](#main-page)
+12. [RTMP handler](#rtmp-handler)
+13. [AI Translation](#ai-translation)
 
 # Overview
 - [Django](https://www.djangoproject.com) our python based web framework and on top of it we use different libraries and dependencies to execute out project
