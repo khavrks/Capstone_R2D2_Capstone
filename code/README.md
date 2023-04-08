@@ -11,6 +11,6 @@ Our project has 60000 lines of code and 5 different programs that were created d
 5 different programs 
 
 - Django 
-    - [React] (https://react.dev/) 
-    - Rest Framework
-    - All Auth 
+    - [React](https://react.dev/) 
+    - [Rest Framework](https://www.django-rest-framework.org/)
+    - [All Auth](https://django-allauth.readthedocs.io/en/latest/)
