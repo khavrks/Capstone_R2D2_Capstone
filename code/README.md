@@ -11,6 +11,7 @@ Our project has 60000 lines of code and 5 different programs that were created d
 # Overview
 - [Django](https://www.djangoproject.com) our python based web framework and on top of it we use different libraries and dependencies to execute out project
 - [React](https://react.dev/) build our frontend
+- [WebPack](https://webpack.js.org) for bundling all our javascript files for the browser
 - [Rest Framework](https://www.django-rest-framework.org/) build our api
 - [All Auth](https://django-allauth.readthedocs.io/en/latest/) for authentication
 - [Channels](https://channels.readthedocs.io/en/stable/) for websockets
