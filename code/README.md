@@ -38,7 +38,7 @@ Our project has 60000 lines of code and 5 different programs that were created d
 
 
 ## File Structure
-this is our code structure
+This is our code structure
 ```powershell
     ├── administrator
 │   ├── __init__.py
