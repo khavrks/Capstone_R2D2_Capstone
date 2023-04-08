@@ -723,7 +723,7 @@ def settingsusr(request, channel_name):
     return HttpResponse(html_template.render(context, request))
 ```
 
-webpack configuration
+WebPack configuration
 ```javascript
 const path = require('path');
 const webpack = require('webpack');
@@ -779,7 +779,7 @@ module.exports = {
 ```
 
 
-main page of the application 
+Main page: Shows live stream at the top of the grid and would size itself automatically if there is more than 1 stream.
 ```javascript
 import React, {useEffect, useState} from "react";
 import { Col, Container, Row } from "react-bootstrap";
@@ -837,7 +837,8 @@ export const FrontPage = () => {
 ```
 
 
-RTMP handler 
+RTMP handler:
+The RTMPServer class is a Java implementation of an RTMP server using the Netty framework. It has properties for the port number, a stream manager, and a thread pool size for handling incoming connections. The run method initializes the server and starts listening for connections, while the close method shuts down the server.
 ```java
 package com.havr67.server;
 
