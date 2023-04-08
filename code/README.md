@@ -10,6 +10,7 @@ Our project has 60000 lines of code and 5 different programs that were created d
 
 # Overview
 ###### Webserver is using [Django](https://www.djangoproject.com/) as a mian framework and on top of it we use different libriries and dependencies to execute it  
+- [Django](https://www.djangoproject.com) our python based web framework
 - [React](https://react.dev/) build our frontend
 - [Rest Framework](https://www.django-rest-framework.org/) build our api
 - [All Auth](https://django-allauth.readthedocs.io/en/latest/) for authentication
