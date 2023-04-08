@@ -10,7 +10,7 @@ Our project has 60000 lines of code and 5 different programs that were created d
 # Overview
 5 different programs 
 
-    - Django 
-        - [React] (https://react.dev/) 
-        - Rest Framework
-        - All Auth 
+- Django 
+    - [React] (https://react.dev/) 
+    - Rest Framework
+    - All Auth 
