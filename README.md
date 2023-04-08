@@ -19,25 +19,12 @@ Mayank Vashisht
 [Business Case](https://github.com/khavrks/Capstone_R2D2_reunited/blob/main/Documentation/R2D2s%20Reunited's%20Business%20Case.docx)
 
 [Project Experience Report](https://1drv.ms/w/s!AiMUF9w9zosAiJAL8iPFxeQaVDQNQQ?e=dn1UnG)
-## Commits
-Nikita - Initial Commit - September 10, 2022
 
-Nikita - init - September 10, 2022
+[Project Experience Report](https://1drv.ms/w/s!AiMUF9w9zosAiJAL8iPFxeQaVDQNQQ?e=2u4tyQ)
 
-Nikita - Update README.md - September 10, 2022
+[R2D2s' Testing Document](https://1drv.ms/w/s!AiMUF9w9zosAiJAc-kVda-goSvfFKw?e=gkK5wy)
 
-Nikita - second_init - September 10, 2022
+[R2D2s' Features - Priority and Reasoning](https://1drv.ms/w/s!AiMUF9w9zosAiJAi6Ynw9eZ_DDPQYg?e=3kqmai)
 
-Nikita - Merge branch 'main'- September 10, 2022
-
-Nikita - weboack_init - September 10, 2022
-
-Nikita - update1 - September 11, 2022
-
-Nisarg - Added Mac VENEV - Spetember 16, 2022
-
-Nikita - xml shit - Sepetember 20, 2022
-
-Nikita - trying out enlist - September 21, 2022
-
-Nikita -git - September 26, 2022
+## React App Structure
+<img src="https://bnz06pap003files.storage.live.com/y4mCw2KLVqt6VnFDR-0wh69GIj4A_H59FS5d1lOOyIY1-b_zH8sGo9qFQdivvaURxC9D_Z_Bl5pSpn_clgiukmbswgd5NYC8tD-H8YEh1TLo-kI-6mrGILJNhPWFsYE4hzn_Pru7kKJBLRhKakH4h0UV1DRV6schnWxwO9tlu8jA0Bo5q2TFm5UGEkcSbY__x3m?width=1280&height=493&cropmode=none" width="1280" height="493" />
