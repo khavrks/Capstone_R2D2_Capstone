@@ -39,8 +39,6 @@ Second Half (ENSE-477)
 
 [Project Experience Report](https://1drv.ms/w/s!AiMUF9w9zosAiJAL8iPFxeQaVDQNQQ?e=dn1UnG)
 
-[Project Experience Report](https://1drv.ms/w/s!AiMUF9w9zosAiJAL8iPFxeQaVDQNQQ?e=2u4tyQ)
-
 [R2D2s' Testing Document](https://1drv.ms/w/s!AiMUF9w9zosAiJAc-kVda-goSvfFKw?e=gkK5wy)
 
 [R2D2s' Features - Priority and Reasoning](https://1drv.ms/w/s!AiMUF9w9zosAiJAi6Ynw9eZ_DDPQYg?e=3kqmai)
