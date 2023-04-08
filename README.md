@@ -44,3 +44,6 @@ Second Half (ENSE-477)
 [R2D2s' Testing Document](https://1drv.ms/w/s!AiMUF9w9zosAiJAc-kVda-goSvfFKw?e=gkK5wy)
 
 [R2D2s' Features - Priority and Reasoning](https://1drv.ms/w/s!AiMUF9w9zosAiJAi6Ynw9eZ_DDPQYg?e=3kqmai)
+
+## Acknowledgements
+We would like to thank Dr. Tim Maciag, Dr. Craig Gelowitz, and Dr. Kin-Chong Yow - Dr. Maciag for presiding over a capstone project to remember, and Dr. Gelowitz and Dr. Yow for all the guidance and expertise that they provided despite not being our assigned mentors. We would also like to thank Dr. Yasser Morgan for being our mentor even though our project wasn’t really in his area of expertise. We wish him a happy retirement too.
