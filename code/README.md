@@ -1,12 +1,20 @@
 Our project has 60000 lines of code and 5 different programs that were created during this time so it is very hard to explain everything in a few paragraphs. So we will try to give you an overview of our project and how we got there. We will try to explain the different parts of our project and how they work together. As some code not even loaded to github and some of the code we think should be private we only showing the code snippets that would give you good overview of our project. In the end we will show you the end result and how you can use it.
+
 # Table of Contents
 1. [Overview](#overview)
-2. [Getting Started](#getting-started)
-3. [Structure](#structure)
-4. [Code](#code)
-5. [End Result](#end-result)
-6. [Conclusion](#conclusion)
-7. [References](#references)
+2. [React App Structure](#react-app-structure)
+3. [File Structure](#file-structure)
+4. [Project Settings](#project-settings)
+5. [API Urls](#api-urls)
+6. [API Example](#api-example)
+7. [Websockets connection](#websockets-connection)
+8. [Channel model](#channel-model)
+9. [Frontend login required example](#frontend-login-required-example)
+10.[WebPack Configuration](#webpack-configuration)
+11.[Main Page](#main-page)
+12.[RTMP handler](#rtmp-handler)
+13.[AI Translation](#ai-translation)
+
 
 # Overview
 - [Django](https://www.djangoproject.com) our python based web framework and on top of it we use different libraries and dependencies to execute out project
@@ -415,7 +423,7 @@ this is our code structure
             └── provider_list.html
 ```
  
-Project Settings: 
+## Project Settings: 
 The code provided is a Python Django project settings file. It includes configuration for various installed apps, database settings, middleware, templates, and authentication backends
 ```python
 CSRF_TRUSTED_ORIGINS = ['https://r2d2streaming.site']
@@ -563,7 +571,7 @@ ACCOUNT_EMAIL_VERIFICATION = False
 ACCOUNT_SESSION_REMEMBER = True
 ```
 
-API urls:
+## API urls:
 This code defines URL patterns for a Django web application using the path() function, which maps a URL pattern to a view function. The views are defined in another module or file, and the names of the views are used as arguments to the path() function. The URL patterns are used to route incoming requests to the appropriate views, which generate responses to be sent back to the client.
 ```python
 from django.urls import path
@@ -608,7 +616,7 @@ urlpatterns = [
 ```
 
 
-API example:
+## API example:
 The Django API view handles requests related to setting and getting images for a channel. The SetStreamerImages class is a subclass of Django's APIView and has two methods, get and post, for handling GET and POST requests respectively.
 
 
@@ -659,7 +667,7 @@ class SetStreamerImages(APIView):
                 return Response({"erroes": e.args} ,status=status.HTTP_400_BAD_REQUEST)    
 ```
 
-websockets connection:
+## Websockets connection:
 This is a Python script that uses the Channels library to implement a WebSocket consumer for a chat room. The ChatConsumer class is a subclass of Channels' WebsocketConsumer and defines a connect method that is called when a client connects to the WebSocket. This method adds the client to a group that corresponds to the chat room identified by the stream_id URL parameter and sends a message to the group notifying the other clients of the chat room's live status and view count.
 ```python
 import json
@@ -686,7 +694,8 @@ class ChatConsumer(WebsocketConsumer):
         self.accept()
 ```
 
-main channel model 
+## Channel model: 
+Channel model more like an entity to store data related to a channel
 ```python
 class Channel(models.Model):
     private_key = models.CharField(max_length=100)
@@ -717,7 +726,7 @@ class Channel(models.Model):
         verbose_name_plural = 'Channels'
 ```
 
-frontend login required example
+## Frontend login required example
 ```python
 @login_required
 def settingsusr(request, channel_name):
@@ -729,7 +738,7 @@ def settingsusr(request, channel_name):
     return HttpResponse(html_template.render(context, request))
 ```
 
-WebPack configuration
+## WebPack configuration
 ```javascript
 const path = require('path');
 const webpack = require('webpack');
@@ -785,7 +794,8 @@ module.exports = {
 ```
 
 
-Main page: Shows live stream at the top of the grid and would size itself automatically if there is more than 1 stream.
+## Main page: 
+Shows live stream at the top of the grid and would size itself automatically if there is more than 1 stream.
 ```javascript
 import React, {useEffect, useState} from "react";
 import { Col, Container, Row } from "react-bootstrap";
@@ -843,7 +853,7 @@ export const FrontPage = () => {
 ```
 
 
-RTMP handler:
+## RTMP handler:
 The RTMPServer class is a Java implementation of an RTMP server using the Netty framework. It has properties for the port number, a stream manager, and a thread pool size for handling incoming connections. The run method initializes the server and starts listening for connections, while the close method shuts down the server.
 ```java
 package com.havr67.server;
@@ -918,7 +928,7 @@ public class RTMPServer {
 }
 ```
 
-AI Translation:
+## AI Translation:
 This is a Python script that monitors a directory for newly created WAV files and transcribes them using the Google Cloud Speech-to-Text API. The transcription is done in a separate thread to avoid blocking the main thread. The language of the WAV file is determined based on the first two characters of the file name, and the transcription is done using the appropriate language model. The resulting transcription is saved as a WebVTT file in a specified directory.
 ```python
 import os
