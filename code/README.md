@@ -673,3 +673,60 @@ def settingsusr(request, channel_name):
     html_template = loader.get_template('frontend/index.html')
     return HttpResponse(html_template.render(context, request))
 ```
+
+main page of the application 
+```javascript
+import React, {useEffect, useState} from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import {CardGrid} from "../components/Cardgrid";
+import {CategoryGrid} from "../components/front_ui/CategoryGrid";
+
+import { useHttp } from '../hooks/http.hook';
+
+
+
+export const FrontPage = () => {
+
+    const {loading, request} = useHttp();
+
+    const [live_streams, setLive_streams] = useState([]);
+    const [streams_by_raiting, setStreams_by_raiting] = useState([]);
+    const [streamer_info, setStreamer_info] = useState([]);
+    const [categories, setCategories] = useState([]);
+
+    const getLiveStreams = async () => {
+        const data = await request('/api/getLiveStreamers/', 'GET');
+        setLive_streams(data);
+    }
+
+    const getStreamersByRaiting = async () => {
+        const data = await request('/api/getStreamersByRaiting/', 'GET');
+        setStreams_by_raiting(data);
+    }
+
+    const getCategories = async () => {
+        const data = await request('/api/getCategories/', 'GET');
+        setCategories(data);
+        console.log(data);
+    }
+
+
+    useEffect(() => {
+        getLiveStreams();
+        getStreamersByRaiting();
+        getCategories();
+    }, [])
+
+
+    return (
+        <div>
+            <h2>
+                Live Streams
+            </h2>
+           <CardGrid stream_name={live_streams} />
+           <CategoryGrid categorys_name={categories} />
+           <CardGrid stream_name={streams_by_raiting} />
+        </div>
+    )
+}
+```
