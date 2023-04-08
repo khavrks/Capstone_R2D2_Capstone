@@ -556,3 +556,77 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = False
 ACCOUNT_SESSION_REMEMBER = True
 ```
+
+API example 
+```python
+from urllib import response
+from django.http import HttpResponse
+from django.shortcuts import render
+from rest_framework import generics, status
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.parsers import MultiPartParser, FormParser
+from requests import Request, Session, get, session
+from django.core.files.storage import FileSystemStorage
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+import time
+import asyncio
+
+from frontend.utils import make_private_key
+from .models import *
+from .serializers import *
+from dynamodb_json import json_util as dynamodb_json
+import boto3
+
+from .utils import *
+
+class SetStreamerImages(APIView):
+        
+        parser_classes = (MultiPartParser, FormParser)
+        
+        def get(self, request, channel_name):
+            ch = Channel.objects.get(channel_name=channel_name)
+            serializer = ChannelImagesSerializer(ch)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+    
+        def post(self, request, channel_name):
+            usr = request.user
+            print(request.data)
+            try:
+                ch = Channel.objects.get(channel_name=channel_name, user=usr)
+                serializer = ChannelImagesSerializer(ch, data=request.data)
+                if serializer.is_valid():
+                    serializer.save()
+                    return Response(serializer.data, status=status.HTTP_200_OK)
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            except Exception as e:
+                return Response({"erroes": e.args} ,status=status.HTTP_400_BAD_REQUEST)    
+```
+
+webscokets connection 
+```python
+import json
+from channels.generic.websocket import WebsocketConsumer
+from asgiref.sync import async_to_sync
+from datetime import datetime
+from backend.models import Channel
+from backend.models import ChannelChat
+from django.contrib.auth.models import User
+
+class ChatConsumer(WebsocketConsumer):
+
+    def connect(self):
+        self.stream_id = self.scope['url_route']['kwargs']['stream_id']
+        async_to_sync(self.channel_layer.group_add)(str(self.stream_id), self.channel_name)
+        self.channel_stream = Channel.objects.get(channel_name=self.stream_id)
+        self.channel_stream.views += 1
+        self.is_live = self.channel_stream.is_live
+        self.channel_stream.save()
+        async_to_sync(self.channel_layer.group_send)(str(self.stream_id), {'type': 'live_status', 'is_live': self.is_live})
+        async_to_sync(self.channel_layer.group_send)(
+            str(self.stream_id), {'type': 'view_count', 'views': self.channel_stream.views}
+        )
+        self.accept()
+```
