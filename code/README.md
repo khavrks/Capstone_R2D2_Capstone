@@ -557,6 +557,50 @@ ACCOUNT_EMAIL_VERIFICATION = False
 ACCOUNT_SESSION_REMEMBER = True
 ```
 
+API urls 
+```python
+from django.urls import path
+from . import views
+
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('is_authenticated/', views.is_authenticated.as_view(),
+        name='is_authenticated'),
+    path('test_video_stream/<str:stream_id>',
+        views.test_video_stream.as_view(), name='test_video_stream'),
+    path('getViewerCount/<str:stream_id',views.getviewerCount.as_view(),name='stream_view_count'),
+    path('getStreamerUrls/<str:streamer_id>', views.getStreamerUrls.as_view(), name='getStreamerUrls'),
+    path('subscribe/<str:channel_name>', views.SubscribeToChannel.as_view(), name='subscribe'),
+    path('unsubscribe/<str:channel_name>', views.UnSubscribeToChannel.as_view(), name='unsubscribe'),
+    path('getStreamPreview/<str:channel_name>', views.GetVideoStreamPreview.as_view(), name='getStreamPreview'),
+    path('getStreamersInfo/<str:channel_name>', views.GetStreamersInfo.as_view(), name='getStreamersInfo'),
+    path('getLiveStreamers/', views.GetLiveStreamers.as_view(), name='getLiveStreamers'),
+    path('getStreamersByRaiting/', views.GetStreamersSortByRaiting.as_view(), name='getStreamers'),
+    path('getStreamersByViews/', views.GetStreamersSortByViews.as_view(), name='getStreamers'),
+    path('getStreamersByTags/<str:tag>', views.GetStreamersSortByTags.as_view(), name='getStreamers'),
+    path('getLiveStreamersByRating/', views.GetLiveStreamersSortByRaiting.as_view(), name='getLiveStreamers'),
+    path('getSreamerInfo/<str:channel_name>', views.GetSreamerInfo.as_view(), name='GetSreamerInfo'),
+    path('getUserStreamerInfo/', views.GetUserStreamerInfo.as_view(), name='GetUserStreamerInfo'),
+    path('subscribeToChannel/<str:channel_name>', views.SubscribeToChannel.as_view(), name='subscribeToChannel'),
+    path('unSubscribeToChannel/<str:channel_name>', views.UnSubscribeToChannel.as_view(), name='unSubscribeToChannel'),
+    path('getSubscriptions/', views.GetSubscriptions.as_view(), name='getSubscriptions'),
+    path('isUserAStreamer/<str:channel_name>', views.IsUserAStreamer.as_view(), name='IsUserAStreamer'),
+    path('userSubsribedToChannel/<str:channel_name>', views.UserSubsribedToChannel.as_view(), name='UserSubsribedToChannel'),
+    path('settingsStreamer/<str:channel_name>', views.SettingsStreamer.as_view(), name='SettingsStreamer'),
+    path('privateKey/<str:channel_name>', views.PrivateKey.as_view(), name='PrivateKey'),
+    path('changePrivateKey/<str:channel_name>', views.ChangePrivateKey.as_view(), name='ChangePrivateKey'),
+    path('setStreamerTodayStream/<str:channel_name>', views.SetStreamerTodayStream.as_view(), name='SetStreamerTodayStream'),
+    path('getCategories/', views.GetCategories.as_view(), name='GetCategories'),
+    path('seacrhChannels/<str:search>', views.SeacrhChannels.as_view(), name='SeacrhChannels'),
+    path('getStreamsChat/<str:channel_name>', views.GetStreamsChat.as_view(), name='GetStreamsChat'),
+    path('setStreamerImages/<str:channel_name>', views.SetStreamerImages.as_view(), name='SetStreamerImages'),
+    path('get_user/', views.GetUser.as_view(), name='get_user'),
+    path('getStreamerLanguage/<str:channel_name>', views.GetStreamerLanguage.as_view(), name='GetStreamerLanguage'),
+]
+```
+
+
 API example 
 ```python
 from urllib import response
