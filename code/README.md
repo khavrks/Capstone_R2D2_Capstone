@@ -415,7 +415,8 @@ this is our code structure
             └── provider_list.html
 ```
  
-this is our main settings that we used in our project 
+Project Settings: 
+The code provided is a Python Django project settings file. It includes configuration for various installed apps, database settings, middleware, templates, and authentication backends
 ```python
 CSRF_TRUSTED_ORIGINS = ['https://r2d2streaming.site']
 
