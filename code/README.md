@@ -606,7 +606,10 @@ urlpatterns = [
 ```
 
 
-API example 
+API example:
+The Django API view handles requests related to setting and getting images for a channel. The SetStreamerImages class is a subclass of Django's APIView and has two methods, get and post, for handling GET and POST requests respectively.
+
+
 ```python
 from urllib import response
 from django.http import HttpResponse
@@ -654,7 +657,8 @@ class SetStreamerImages(APIView):
                 return Response({"erroes": e.args} ,status=status.HTTP_400_BAD_REQUEST)    
 ```
 
-websockets connection 
+websockets connection:
+This is a Python script that uses the Channels library to implement a WebSocket consumer for a chat room. The ChatConsumer class is a subclass of Channels' WebsocketConsumer and defines a connect method that is called when a client connects to the WebSocket. This method adds the client to a group that corresponds to the chat room identified by the stream_id URL parameter and sends a message to the group notifying the other clients of the chat room's live status and view count.
 ```python
 import json
 from channels.generic.websocket import WebsocketConsumer
