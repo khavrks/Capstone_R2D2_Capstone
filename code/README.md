@@ -23,8 +23,8 @@ Our project has 60000 lines of code and 5 different programs that were created d
 - [AWS](https://aws.amazon.com/) for our hosting
 - [Git](https://git-scm.com/) for our version control
 
-
-
+## React App Structure
+<img src="https://bnz06pap003files.storage.live.com/y4mCw2KLVqt6VnFDR-0wh69GIj4A_H59FS5d1lOOyIY1-b_zH8sGo9qFQdivvaURxC9D_Z_Bl5pSpn_clgiukmbswgd5NYC8tD-H8YEh1TLo-kI-6mrGILJNhPWFsYE4hzn_Pru7kKJBLRhKakH4h0UV1DRV6schnWxwO9tlu8jA0Bo5q2TFm5UGEkcSbY__x3m?width=1280&height=493&cropmode=none" width="1280" height="493" />
 ## Structure
 this is our code structure
 ```powershell
