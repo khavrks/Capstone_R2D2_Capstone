@@ -909,3 +909,75 @@ public class RTMPServer {
 
 }
 ```
+
+ai translation     
+```python
+import os
+from threading import Thread
+import time
+import logging
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+from google.cloud import speech
+from google.oauth2 import service_account
+from google.cloud import translate_v2 as translate
+import pysrt
+import webvtt
+
+
+CREADENTIALS = service_account.Credentials.from_service_account_file('braided-horizon-380818-e47b7345e86d.json')
+CLIENT = speech.SpeechClient(credentials=CREADENTIALS)
+OUTPUT_DIR = r'/var/www/flv/vtt'
+M3U8_DIR = r'/var/www/flv'
+M3U8_VTT_DIR = r'/var/www/flv'
+
+LANGUAGES = {
+    'ru': 'ru-RU',
+    'en': 'en-US',
+    'de': 'de-DE',
+    'fr': 'fr-FR',
+    'es': 'es-ES',
+    'it': 'it-IT',
+}
+
+LANGUAGES_REVERSE = {
+    'ru-RU': 'ru',
+    'en-US': 'en',
+    'de-DE': 'de',
+    'fr-FR': 'fr',
+    'es-ES': 'es',
+    'it-IT': 'it',
+}
+
+TRANSLATE_LANGUAGES = {
+    'ru': 'ru',
+    'en': 'en',
+    'de': 'de',
+    'fr': 'fr',
+    'es': 'es',
+    'it': 'it',
+}
+class WavHandler(FileSystemEventHandler):
+    def on_created(self, event):
+        if not event.is_directory and event.src_path.endswith('.wav'):
+            file_name = os.path.basename(event.src_path)
+            base_name_file = os.path.splitext(file_name)[0]
+            print(base_name_file)
+            if base_name_file.startswith('live'):
+                language = "en_US"
+            else:
+                langcode = base_name_file[:2]
+                language = LANGUAGES.get(langcode, 'en')
+            logging.info(f'Languge: {language}')
+            base_name = base_name_file[:-4]
+            temp_prt = None
+            if active_wav_files:
+                for file_ptr in active_wav_files:
+                    file_ptr_name = os.path.basename(file_ptr)
+                    if file_ptr_name.startswith(base_name):
+                        temp_prt = file_ptr
+                        transcription_thread = Thread(target=self.transcribe_wav_file, args=(file_ptr, base_name_file, language))
+                        transcription_thread.start()
+            active_wav_files.add(event.src_path)
+            active_wav_files.discard(temp_prt)
+```
