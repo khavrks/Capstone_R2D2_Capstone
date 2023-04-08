@@ -654,7 +654,7 @@ class SetStreamerImages(APIView):
                 return Response({"erroes": e.args} ,status=status.HTTP_400_BAD_REQUEST)    
 ```
 
-webscokets connection 
+websockets connection 
 ```python
 import json
 from channels.generic.websocket import WebsocketConsumer
