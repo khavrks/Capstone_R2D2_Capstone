@@ -630,3 +630,46 @@ class ChatConsumer(WebsocketConsumer):
         )
         self.accept()
 ```
+
+main channel model 
+```python
+class Channel(models.Model):
+    private_key = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    bio = models.TextField(max_length=200, null=True, blank=True)
+    channel_name = models.CharField(max_length=25, validators=[MinLengthValidator(3)], unique=True)
+    channel_image = models.ImageField(upload_to='channel_images', null=True, blank=True)
+    channel_cover = models.ImageField(upload_to='channel_covers', null=True, blank=True)
+    thumbnail = models.ImageField(upload_to='thumbnails', null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    channel_rating = models.IntegerField(default=0)
+    title = models.CharField(max_length=100, null=True, blank=True)
+    views = models.IntegerField(default=0, null=True, blank=True)
+    tags = models.ManyToManyField(Tags, blank=True)
+    preview = models.ImageField(upload_to='previews', null=True, blank=True)
+    is_live = models.BooleanField(default=False)
+    social_media_urls = models.ManyToManyField(SocialMedia, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
+    language = models.CharField(max_length=100, choices=LANGUAGE_CHOICES, default='English')
+    # widjets = models.TextField(max_length=1000, null=True, blank=True)
+
+    def __str__(self):
+        return self.channel_name
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'Channel'
+        verbose_name_plural = 'Channels'
+```
+
+frontend login required example
+```python
+@login_required
+def settingsusr(request, channel_name):
+    ch = Channel.objects.get(channel_name=channel_name)
+    if request.user != ch.user:
+        return redirect('main')
+    context = {'segment': 'settings', 'content_type': "application/x-javascript"}
+    html_template = loader.get_template('frontend/index.html')
+    return HttpResponse(html_template.render(context, request))
+```
